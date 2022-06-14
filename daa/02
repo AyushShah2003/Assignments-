@@ -1,0 +1,63 @@
+Problem Statement:-------------------
+Given an already sorted array of positive integers, design an algorithm and implement it using a program to find whether given key element is present in the array or not. Also, find total number of comparisons for each input case. (Time Complexity = O(logn), where n is the size of input).
+Your Program Should run for T no of Test cases imputed by user.
+
+Algorithm:---------------------------------------
+
+BinarySearch( arr[], n, key){ l=0,h=n-1,mid,flag=0,counter=0; while(l<=h)
+{
+mid=(l+h)/2 if(arr[mid]=key){ flag =1 print "found at " ,mid break
+}
+else if(arr[mid]<key){ l=mid+1 counter++
+}
+else{ h=mid-1
+counter++
+}
+}
+if(flag=0)
+Print " not found "
+Print counter }
+Complexity Analysis:
+Time Complexity:
+T(n) = (𝑙)-Worst and Average case.
+T(n) = (1)	[ Constant]
+Space Complexity:
+Worst Case=Best Case = Average case = (1) [ Constant ]
+
+
+Source Code:-----------------------------------------
+
+#include <iostream> using namespace std;
+void BinarySearch(int arr[], int n, int key)
+{
+int l = 0, h = n - 1, mid, flag = 0, counter = 0;
+while (l <= h)
+{
+mid = (l + h) / 2;
+if (arr[mid] == key)
+{
+flag = 1; cout<< "found at " << mid <<endl; break;
+}
+else if (arr[mid] < key)
+{
+l = mid + 1;
+counter++;
+}
+else
+{
+h = mid - 1;
+counter++;
+}
+}
+if (flag == 0)
+{
+cout<< " not found " <<endl;
+}
+cout<< "number of comparison : " << counter <<endl;
+}
+int main()
+{
+cout<<"Enter no. of times : "<<endl;
+int t;
+cin>> t;
+while (t > 0)
