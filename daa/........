@@ -1,0 +1,51 @@
+Problem Statement:
+Given an array of non-negative integers, design a linear algorithm and implement it using a program to find whether given key element is present in the array or not. Also, find total number of comparisons for each input case. (Time Complexity = O(n), where n is the size of input)
+
+Algorithm:----------------------------
+
+
+
+Algorithm lsearch(a[0…n-1],n,key)
+{
+no_of_comparisons = 0 for i=0 to n
+{
+no_of_comparisons++ if(a[i] == key) Print “ key is found”
+return no_of_comparisons
+} if(i==n)
+Print “ key is NOT found” return no_of_comparisons
+}
+Complexity Analysis:
+Time Complexity:
+Worst Case: When Element is either Present at last index of array or not present in array
+T(n) = () [ Linear]
+Best Case: When Element is Present at first index or nearby index.
+T(n)= (1)	[ Constant]
+Average Case: When Element is Present in between first and last index of array. T(n) = ()	[ Linear]
+Space Complexity:
+Worst Case=Best Case = Average case = (1) [ Constant ]
+
+
+
+
+Source Code:------------------------------------
+ 
+#include<iostream> using namespace std;
+void lsearch(int arr[],int key,int n){
+int i ,counter=0,flag=0; for(i=0;i<n;i++){ if(arr[i]==key){
+flag=1; cout<<"Present "<<i+1<<endl;
+break;
+}
+counter++;
+}
+if(flag==0){
+cout<<"Not Present "<<counter<<endl;
+}
+}
+int main(){ int t; cin>>t; while(t>0){ int n; cin>>n; int arr[n]; for(int i=0;i<n;i++){
+cin>>arr[i];
+}
+int key; cin>>key;
+lsearch(arr,key,n);
+t--;
+}
+
