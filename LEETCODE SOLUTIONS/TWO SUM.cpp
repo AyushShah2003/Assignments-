@@ -1,7 +1,8 @@
+//**** AYUSH SHAH ************
 class Solution {
 public: 
-    vector<int> twoSum(vector<int>& nums, int target) {//vector<int> two sum(vector<int>&nums, int tagrget )
-        int n = nums.size();//int n =num.size();
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int n = nums.size();
         
         vector<int> ans;
         
